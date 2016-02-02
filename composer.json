@@ -1,0 +1,13 @@
+{
+	"name": "app-zap/categorized-content",
+	"type": "typo3-cms-extension",
+	"require": {
+		"fluidtypo3/fluidcontent": "4.*",
+		"fluidtypo3/vhs": "2.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"AppZap\\CategorizedContent\\": "Classes/"
+		}
+	}
+}

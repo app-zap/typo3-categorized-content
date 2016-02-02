@@ -1,0 +1,4 @@
+tt_content.stdWrap.wrap3.cObject = CONTENT
+tt_content.stdWrap.wrap3.cObject {
+
+}
