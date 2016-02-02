@@ -1,7 +1,5 @@
 page.includeJS.tx_categorizedcontent = EXT:categorized_content/Resources/Public/JavaScript/script.js
 
-plugin.tx_catgorizedcontent.persistence.storagePid.data = {page:uid}
-
 tt_content.stdWrap.wrap3 {
     cObject = COA
     cObject {
