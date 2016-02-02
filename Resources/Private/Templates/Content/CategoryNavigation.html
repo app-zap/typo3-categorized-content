@@ -12,7 +12,15 @@
 </f:section>
 
 <f:section name="Main">
-	Category Navigation!
+	<f:if condition="{categories -> f:count()}">
+		<nav class="category-navigation" data-category-navigation>
+			<ul>
+				<f:for each="{categories}" as="category">
+					<li><a href="#" data-target-category="{category.uid}">{category.title}</a></li>
+				</f:for>
+			</ul>
+		</nav>
+	</f:if>
 </f:section>
 
 </html>

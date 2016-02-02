@@ -1,4 +1,27 @@
-tt_content.stdWrap.wrap3.cObject = CONTENT
-tt_content.stdWrap.wrap3.cObject {
+page.includeJS.tx_categorizedcontent = EXT:categorized_content/Resources/Public/JavaScript/script.js
 
+plugin.tx_catgorizedcontent.persistence.storagePid.data = {page:uid}
+
+tt_content.stdWrap.wrap3 {
+    cObject = COA
+    cObject {
+        10 = CONTENT
+        10 {
+            table = sys_category
+            select {
+                leftjoin = sys_category_record_mm ON (sys_category.uid = sys_category_record_mm.uid_local)
+                where = sys_category_record_mm.uid_foreign = {field:uid} AND tablenames = 'tt_content' AND fieldname = 'categories'
+                where.insertData = 1
+            }
+            renderObj = TEXT
+            renderObj {
+                field = uid
+                wrap = |,
+            }
+            stdWrap.wrap = <div data-categories="|">
+        }
+        20 = TEXT
+        20.value = |</div>
+    }
+    fieldRequired = categories
 }

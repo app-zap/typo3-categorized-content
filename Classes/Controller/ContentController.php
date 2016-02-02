@@ -5,10 +5,17 @@ class ContentController extends \FluidTYPO3\Fluidcontent\Controller\ContentContr
 {
 
     /**
+     * @var \TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository
+     * @inject
+     */
+    protected $categoryRepository;
+
+    /**
      *
      */
     public function categoryNavigationAction() {
-        xdebug_break();
+        $categories = $this->categoryRepository->findAll();
+        $this->view->assign('categories', $categories);
     }
 
 }
