@@ -17,14 +17,14 @@
 			<ul>
 				<f:for each="{categories}" as="category">
 					<li>
-						<v:resource.record.fal table="sys_category" field="tx_categorizedcontent_image" record="{category}">
 							<a href="#" data-target-category="{category.uid}">
-								<f:if condition="{images -> f:count(}">
-									{images.0 -> ri:image(renderLink:'false')}
+								<f:if condition="{category.tx_categorizedcontent_image}">
+									<v:content.resources.fal table="sys_category" field="tx_categorizedcontent_image" record="{category}" as="images">
+											{images.0 -> ri:image(renderLink:'false')}
+									</v:content.resources.fal>
 								</f:if>
 								{category.title}
 							</a>
-						</v:resource.record.fal>
 					</li>
 				</f:for>
 			</ul>
