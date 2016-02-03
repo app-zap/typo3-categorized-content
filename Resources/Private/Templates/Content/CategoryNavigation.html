@@ -1,4 +1,4 @@
-<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:ri="http://typo3.org/ns/AppZap/ResponsiveImageVh/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
 
 <f:layout name="Content"/>
 
@@ -20,7 +20,7 @@
 						<v:resource.record.fal table="sys_category" field="tx_categorizedcontent_image" record="{category}">
 							<a href="#" data-target-category="{category.uid}">
 								<f:if condition="{images -> f:count(}">
-									<f:image src="{images.0}" treatIdAsReference="true"/>
+									{images.0 -> ri:image(renderLink:'false')}
 								</f:if>
 								{category.title}
 							</a>
