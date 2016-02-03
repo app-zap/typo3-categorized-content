@@ -2,6 +2,7 @@
 	"name": "app-zap/categorized-content",
 	"type": "typo3-cms-extension",
 	"require": {
+		"app-zap/responsive-image-vh": "1.0.0",
 		"fluidtypo3/fluidcontent": "4.*",
 		"fluidtypo3/vhs": "2.*"
 	},

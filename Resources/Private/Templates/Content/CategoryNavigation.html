@@ -16,7 +16,16 @@
 		<nav class="category-navigation" data-category-navigation>
 			<ul>
 				<f:for each="{categories}" as="category">
-					<li><a href="#" data-target-category="{category.uid}">{category.title}</a></li>
+					<li>
+						<v:resource.record.fal table="sys_category" field="tx_categorizedcontent_image" record="{category}">
+							<a href="#" data-target-category="{category.uid}">
+								<f:if condition="{images -> f:count(}">
+									<f:image src="{images.0}" treatIdAsReference="true"/>
+								</f:if>
+								{category.title}
+							</a>
+						</v:resource.record.fal>
+					</li>
 				</f:for>
 			</ul>
 		</nav>
