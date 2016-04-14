@@ -2,6 +2,7 @@
 	$.fn.categoryNavigation = function () {
 		return this.each(function () {
 			var categoryNavigation = $(this);
+            categoryNavigation.parent().find('[data-categories]').hide();
 			categoryNavigation.find('[data-target-category]').on('click', function() {
 				var clickedCategory = ',' + $(this).data('targetCategory') + ',';
 				categoryNavigation.parent().find('[data-categories]').hide().each(function() {
@@ -11,7 +12,7 @@
 						targetElement.show();
 					}
 				});
-			});
+			}).first().click();
 		})
 	};
 
