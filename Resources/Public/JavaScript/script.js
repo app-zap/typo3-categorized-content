@@ -6,7 +6,8 @@
             var targets = categoryNavigation.parent().find('[data-categories]');
 
             targets.hide();
-            categoryLinks.on('click', function() {
+            categoryLinks.on('click', function(e) {
+                e.preventDefault();
                 var clickedLink = $(this);
                 categoryLinks.removeClass('active');
                 clickedLink.addClass('active');
