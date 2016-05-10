@@ -23,3 +23,10 @@ tt_content.stdWrap.wrap3 {
     }
     fieldRequired = categories
 }
+
+plugin.tx_categorizedcontent {
+    view {
+        partialRootPaths.10 = EXT:categorized_content/Resources/Private/Partials/
+        partialRootPaths.1462872447 = EXT:rwd_media/Resources/Private/Partials/
+    }
+}
